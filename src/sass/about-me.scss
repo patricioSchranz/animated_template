@@ -1,0 +1,73 @@
+@import './core';
+@import './variables';
+@import './mixins';
+@import './font';
+@import './general';
+
+footer{
+    position: relative !important;
+}
+
+body{
+    padding-bottom: 0 !important;
+}
+
+section{
+    height: auto !important;
+}
+
+.about-me{
+    // 'CONTENT'
+    &_content{
+        @include flex-variable(column, nowrap, flex-start, center, center);
+        margin-bottom: 2rem;
+
+        &_header{
+            width: 100vw;
+            @include flex-variable(row, wrap, space-between, center, center);
+            padding: 2rem;
+            height: 100vh;
+
+            & h2{
+                font-size: 320%;
+                text-align: center;
+                flex-grow: 1;
+            }
+
+            & img{
+                width: 60%;
+                order: -1;
+                border-radius: 63% 37% 80% 20% / 32% 57% 43% 68% ;
+                animation: moving-border 4s infinite alternate ease-in-out;
+            }
+        }
+
+        & p{
+            width: 98%;
+            padding: .3rem;
+            font-size: 115%;
+            @include main-font();
+            line-height: 1.7rem;;
+            color: rgba(255, 255, 255, 0.9);
+            // background-color: rgba(255, 255, 255, .1);
+            padding: 2rem 1rem;
+            border-radius: .5rem;
+            // margin-bottom: 2rem;
+            // border: 2px solid rgba(255, 255, 255, .1);
+            margin: 0.1rem;
+            padding: 3rem;
+        }
+
+        & p::first-letter{
+            font-size: 125%;
+
+        }
+    }
+
+}
+
+@keyframes moving-border{
+    to{
+        border-radius: 18% 82% 9% 91% / 55% 29% 71% 45%  ;
+    }
+}

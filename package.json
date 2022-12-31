@@ -1,0 +1,12 @@
+{
+  "name": "animated_template",
+  "version": "1.0.0",
+  "description": "A website template for photographers.",
+  "main": "index.js",
+  "scripts": {
+    "built:home": "sass ./src/sass/home.scss ./styles/home.css --style=compressed --watch",
+    "built:about-me": "sass ./src/sass/about-me.scss ./styles/about-me.css --style=compressed --watch"
+  },
+  "author": "",
+  "license": "ISC"
+}

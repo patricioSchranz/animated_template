@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative&display=swap');
+
+@mixin main-font{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+}
+
+@mixin main-heading-font{
+    // font-family: 'Caveat', cursive;
+    // font-weight: 400;
+    font-family: 'Cinzel Decorative', cursive;
+    font-weight: 400;
+    font-size: 220%;
+
+    @media screen and (max-width: 500px) {
+        font-size: 190%;
+    }
+}

@@ -1,0 +1,323 @@
+// ---------------------------------------
+// GENERAL SETTINGS FOR THE WHOLE WEBSITE
+// ---------------------------------------
+
+// 'ELEMENTS'
+
+body{
+    background-color: $color_primary;
+    color: $color_on-primary-1;
+    @include main-font();
+    padding-bottom: 6rem;
+
+    @media screen and (max-width: 650px) {
+        padding-bottom: 4rem;
+    }
+}
+
+a{
+    color: $color_on-primary-1;
+    @include main-font();
+    cursor: pointer;
+    font-weight: 200;
+}
+
+a:hover{
+    color: $color_on-primary-2;
+}
+
+section{
+    width: 100vw;
+    height: 100vh;
+    @include flex-row-center();
+    position: relative;
+    z-index: 15;
+}
+
+// 'GENERAL CLASS'
+.general{
+
+    // 'HEADER'
+    &_header{
+        height: 4rem;
+        width: 100vw;
+        @include flex-variable(row, nowrap, space-between, stretch, center);
+        @include border-default($color_on-primary-1-light);
+        position: sticky;
+        top: 0;
+        left: 0;
+        z-index: 20;
+
+        // 'SOCIAL MEDIA LINKS'
+        &_social-media{
+            width: 20%;
+            border-right: 1px solid $color_on-primary-1-light;
+            @include flex-row-evenly();
+            background-color: $color_primary;
+
+            @media screen and (max-width: 650px){
+                display: none;
+            }
+
+            & i{
+                font-size: 2rem;
+            }
+        }
+
+        // 'MAIN HADING'
+        &_heading{
+            width: 70%;
+            height: 100%;
+            margin: 0;
+            @include flex-row-evenly();
+            flex-grow: 1;
+            color: $color_on-primary-2;
+            font-weight: 200;
+            background-color: rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+            // letter-spacing: 0.2rem;
+            transition: background-color .3s;
+            @include main-heading-font();
+            cursor: pointer;
+
+            @media screen and (max-width: 430px) {
+                font-size: 150%;
+            }
+
+            @media screen and (max-width: 350px) {
+                font-size: 120%;
+            }
+    
+        }
+
+        // 'HAMBURGER
+        &_hamburger-wrapper{
+            width: 5rem;
+            border-left: 1px solid $color_on-primary-1-light;
+            @include flex-row-center();
+            background-color: $color_primary;
+        }
+
+        &_hamburger{
+            width: 2.5rem;
+            height: 2.5rem;
+           @include flex-column-evenly();
+           position: relative;
+           z-index: 10;
+
+           & span{
+            height: 0.25rem;
+            background-color: $color_on-primary-1;
+            transition: width .3s, transform .3s;
+
+                &:first-of-type{
+                    width: 30%;
+                    align-self: flex-end;
+                }
+
+                &:nth-of-type(2){
+                    width: 90%;
+                }
+
+                &:last-of-type{
+                    width: 30%;
+                    align-self: flex-start;
+                }
+           }
+
+           &:hover span{
+                background-color: $color_on-primary-2;
+           }
+
+           &:hover span:first-of-type{
+                // align-self: center;
+                width: 100%;
+            }
+
+            &:hover span:nth-of-type(2){
+                // align-self: center;
+                width: 45%;
+            }
+
+            &:hover span:last-of-type{
+                // align-self: center;
+                width: 100%;
+            }
+
+        }
+
+        & .nav-in{
+            & span{
+                background-color: $color-on-primary-2;
+
+                &:first-of-type{
+                    width: 100%;
+                    transform: rotate(45deg) translateX(.5rem);
+                }
+    
+                &:nth-of-type(2){
+                    display: none;
+                }
+    
+                &:last-of-type{
+                    width: 100%;
+                    transform: rotate(-45deg) translateX(.5rem);
+                }
+            }
+        }
+
+        // 'NAV'
+        &_nav{
+            width: 100vw;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: $color_primary;
+            color: $color_on-primary-1;
+            @include flex-row-evenly();
+            padding: 2rem;
+            display: none;
+
+            @media screen and (max-width: 550px){
+                padding: 1rem;
+             }
+
+            &_img{
+                height: 80vh;
+                width: 50vw;
+                background: url(../pics/Chraecker_owl.jpg) center center / cover no-repeat;
+                // opacity: 0.7;
+                filter: brightness(0.5);
+                clip-path: polygon(0% 20%, 60% 20%, 60% 0%, 100% 50%, 60% 100%, 60% 80%, 0% 80%);
+                transform: perspective(1000px) rotateY(20deg);
+
+                @media screen and (max-width: 550px){
+                   width: 60vw;
+                }
+
+                @media screen and (max-width: 460px){
+                   clip-path: none;
+                 }
+            }
+
+            &_list{
+                // border: 1px solid white;
+                height: 90vh;
+                flex-grow: 1;
+                @include flex-variable(column, nowrap, center, center, center);
+                gap: 1.5rem;
+
+                & a{
+                    @include main-font();
+                    font-size: 200%;
+
+                    @media screen and (max-width: 550px){
+                        font-size: 170%;
+                    }
+                }
+            }
+        }
+    }
+
+    // 'FOOTER'
+    &_footer{
+        width: 100vw;
+        height: 6rem;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        // background-color: $color_primary-light;
+        @include flex-variable(row, nowrap, flex-start, stretch, center);
+        border: 1px solid $color_on-primary-1-light;
+
+        @media screen and (max-width: 650px) {
+            justify-content: space-between;
+            height: 4rem;
+        }
+
+        @media screen and (max-width: 500px) {
+            border: none;
+        }
+
+
+        & h2{
+            width: 30vw;
+            height: 100%;
+            color: $color_on-primary-2;
+            @include main-heading-font();
+            padding: 1rem;
+            font-size: 170%;
+            @include flex-row-center();
+            flex-wrap: wrap;
+            margin: 0;
+            cursor: pointer;
+
+            @media screen and (max-width: 650px) {
+                display: none;
+            }
+
+            & span{
+                width: 100%;
+
+                flex-shrink: 0;
+                text-align: center;
+            }
+        }
+
+        &_gallery-navigation{
+            background-color: $color_primary;
+            width: 60vw;
+            @include flex-row-center();
+            border: solid $color_on-primary-1-light;
+            border-width: 0 1px;
+
+            @media screen and (max-width: 500px) {
+                display: none;
+            }
+            
+            & ul{
+                width: 100%;
+                @include flex-variable(row, nowrap,space-evenly, center, center);
+                padding: 0;
+            }
+
+            & a{
+                font-size: 150%;
+            }
+        }
+
+        &_arrow-up{
+            width: 10vw;
+            background-color: $color_on-primary-2-variant;
+            color: $color_on-primary-1;
+            @include flex-row-center();
+            font-size: 5rem;
+            cursor: pointer;
+
+            @media screen and (max-width: 650px) {
+                flex-grow: 1;
+            }
+
+            &:hover{
+                background-color: $color_primary-light;
+                color: $color-on-primary-2-variant;
+            }
+        }
+    }
+
+    // 'Loader'
+    &_loader{
+        width: 100vw;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        @include flex-row-center();
+        background-color: rgba(0, 0, 0, 1);
+        z-index: 100;
+    }
+
+}

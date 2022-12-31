@@ -1,0 +1,34 @@
+// --------------------------
+// RESETS AND COMMON STYLES
+// --------------------------
+
+button{
+    all: initial;
+    cursor: pointer;
+}
+
+a{
+    all: initial;
+}
+
+ul{
+    padding: none;
+    list-style: none;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.hidden{
+    display: none;
+}

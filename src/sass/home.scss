@@ -1,0 +1,165 @@
+@import './core';
+@import './variables';
+@import './mixins';
+@import './font';
+@import './general';
+
+
+.home{
+
+    // 'CONTAINER FOR WHOLE PAGE'
+    &_big-container{
+        // border: solid $color_on-primary-1-light;
+        // border-width: 0 1px;
+        @include flex-variable(column, nowrap, flex-start, center, center);
+    }
+
+    // 'LANDING SECTION'
+    &_landing-section{
+        // position: relative;
+        justify-content: space-between;
+        padding: 2rem;
+
+        @media screen and (max-width: 1100px){
+            display: block;
+        }
+
+        // HEADING
+        &_h2{
+            & span{
+                display: block;
+                font-size: 200%;
+            }
+
+            @media screen and (max-width: 650px) {
+                font-size: 150%;
+            }
+
+            @media screen and (max-width: 650px) {
+                font-size: 120%;
+            }
+        }
+
+        // NAVIGATION CONTAINER
+        &_gallery-navigation{
+            // @include border-default(#fff);
+            min-width: 15vw;
+
+            & h3,
+            & ul{
+                text-align: right;
+            }
+
+            & h3::before{
+                content: '\23AF ';
+                margin-right: 0.5rem;
+            }
+
+            & a{
+                font-size: 250%;
+            }
+
+            @media screen and(max-width: 1100px){
+                display: none;
+            }
+        }
+
+        // SCROLL DOWN HINT
+        &_down-arrow{
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 8rem;
+            height: 8rem;
+            background-color: $color_on-primary-2-variant;
+            color: $color_on-primary-1;
+            @include flex-row-center();
+            cursor: pointer;
+            z-index: 15;
+
+            @media screen and (max-width: 1100px){
+                right: 0;
+                left: auto;
+                width: 5rem;
+                height: 5rem;
+            }
+
+            &:hover{
+                background-color: $color_primary-light;
+                color: $color_on-primary-2-variant;
+            }
+
+            & p{
+                font-size: 7rem;
+                font-weight: 200;
+
+                @media screen and (max-width: 1100px){
+                    font-size: 4rem;
+                }
+            }
+        }
+    }
+
+    // 'WORK HINT SECTION'
+    &_work-hint{
+        background-color: rgba(0, 0, 0, 0.0);
+        transition: background-color 0.3s;
+        
+        & a{
+            font-size: 300%;
+
+
+            @media screen and (max-width: 650px) {
+                font-size: 250%;
+            }
+        
+            @media screen and (max-width: 650px) {
+                font-size: 200%;
+            }
+
+            @media screen and (max-width: 430px) {
+                font-size: 170%;
+            }
+
+        }
+    }
+
+    // 'BACKGROUNDS FOR THE SECTIONS'
+    &_section-background{
+
+        &_landing,
+        &_wildlife,
+        &_nature,
+        &_pets{
+            position: fixed;
+            top: 0;
+            left: 0;
+            // z-index: 10;
+            width: 100vw;
+            height: 100vh;
+            filter: brightness(1);
+            transition: filter 0.7s;
+        }
+    
+        &_landing{
+            background: url(../pics/Budhadityam2321_dragonfly.jpg) center center / cover no-repeat;
+            z-index: 10;
+        }
+
+        &_wildlife{
+            background: url(../pics/IanZA_leopard.jpg) center center / cover no-repeat;
+            z-index: 9;
+        }
+
+        &_nature{
+            background: url(../pics/Josch13_bird-of-paradise-flower.jpg) center center / cover no-repeat;
+            z-index: 8;
+        }
+
+        &_pets{
+            background: url(../pics/RandyRMM_animal.jpg) center center / cover no-repeat;
+            z-index: 7;
+        }
+    }
+
+}

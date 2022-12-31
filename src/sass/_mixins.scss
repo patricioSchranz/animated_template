@@ -1,0 +1,36 @@
+// 'FLEX BOX'
+
+@mixin flex-variable($direction, $wrap, $justy, $align, $align-content){
+    display: flex;
+    flex-direction: $direction;
+    flex-wrap: $wrap;
+    justify-content: $justy;
+    align-items: $align;
+    align-content: $align-content;
+}
+
+@mixin flex-row-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin flex-row-evenly{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+@mixin flex-column-evenly{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+
+// 'BORDERS'
+
+@mixin border-default($color){
+    border: 1px solid $color;
+}
