@@ -9,6 +9,7 @@ body{
     color: $color_on-primary-1;
     @include main-font();
     padding-bottom: 6rem;
+    overflow-x: hidden;
 
     @media screen and (max-width: 650px) {
         padding-bottom: 4rem;
@@ -292,11 +293,12 @@ section{
             background-color: $color_on-primary-2-variant;
             color: $color_on-primary-1;
             @include flex-row-center();
-            font-size: 5rem;
+            font-size: 3.8rem;
             cursor: pointer;
 
             @media screen and (max-width: 650px) {
                 flex-grow: 1;
+                font-size: 2.8rem;
             }
 
             &:hover{

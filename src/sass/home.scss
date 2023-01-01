@@ -3,6 +3,7 @@
 @import './mixins';
 @import './font';
 @import './general';
+@import './scroll_bar';
 
 
 .home{
@@ -74,8 +75,11 @@
             background-color: $color_on-primary-2-variant;
             color: $color_on-primary-1;
             @include flex-row-center();
-            cursor: pointer;
+            // cursor: pointer;
             z-index: 15;
+            opacity: 1;
+            transition: opacity .3s;
+            pointer-events: none;
 
             @media screen and (max-width: 1100px){
                 right: 0;
@@ -84,10 +88,10 @@
                 height: 5rem;
             }
 
-            &:hover{
-                background-color: $color_primary-light;
-                color: $color_on-primary-2-variant;
-            }
+            // &:hover{
+            //     background-color: $color_primary-light;
+            //     color: $color_on-primary-2-variant;
+            // }
 
             & p{
                 font-size: 7rem;

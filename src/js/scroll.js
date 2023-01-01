@@ -15,15 +15,31 @@ let
 // --- FUNCTIONS ---
 //
 
+// => clip the image
+const clipTheImage = (imageIndex)=>{
+    let 
+        windowScrollPercent = (scrollY - window.innerHeight * imageIndex) / window.innerHeight,
+        clipPathPercent = 100 - windowScrollPercent * 100;
+    
+    console.log('current scroll percent of the window =>' , windowScrollPercent);
+    // console.log('clip path percent', clipPathPercent);
+    // console.log('section', sectionBackgrounds[imageIndex]);
+
+    sectionBackgrounds[imageIndex].style.clipPath = `polygon(0 0, 100% 0, 100% ${clipPathPercent}%, 0 ${clipPathPercent}%)`
+}
+
 // => roll the image
 const rollTheImage = (imageIndex)=>{
-    console.log('imageIndex', imageIndex);
+    // console.log('imageIndex', imageIndex);
 
     // => select the right image from the node list
-    imageToRoll = sectionBackgrounds[imageIndex];
+    // imageToRoll = sectionBackgrounds[imageIndex];
 
     // => set the new height of the image
-    imageToRoll.style.height = window.innerHeight - (scrollY - window.innerHeight * imageIndex);
+    // imageToRoll.style.height = window.innerHeight - (scrollY - window.innerHeight * imageIndex);
+
+    // => clip the image in relation to the scroll percent
+    clipTheImage(imageIndex)
      
     scrollState = imageIndex;
 }
@@ -53,10 +69,19 @@ const setBackgroundBrightness = (workHintName, state)=>{
 // --- EVENT LISTENERS ---
 //
 
+// 'HIDE THE SCROLL DOWN HINT WITH THE FIRST SCROLL DOWN'
+document.addEventListener('scroll', ()=>{
+
+    // currentScroll > lastScrollPosition &&  (buttonScrollDown.style.opacity = '0');
+    scrollY > 1 &&  (buttonScrollDown.style.opacity = '0');
+
+}, {once: true})
+
+
 // 'ROLL THE IMAGES'
 document.addEventListener('scroll', ()=>{
     // console.log('backgrounds', {sectionBackgrounds})
-    console.log('scrollY', scrollY);
+    // console.log('scrollY', scrollY);
 
 
     currentScroll = scrollY;
@@ -83,14 +108,20 @@ document.addEventListener('scroll', ()=>{
         console.log('scroll up');
 
         // => set the height of all backgrounds below the current background eqal to window height
+        // for(let x = scrollState+1; x < sectionBackgrounds.length; x++){
+        //     sectionBackgrounds[x].style.height = window.innerHeight;
+        // }
+
+        // => reset the clip path of all backgrounds below the current background eqal to window height
         for(let x = scrollState+1; x < sectionBackgrounds.length; x++){
-            sectionBackgrounds[x].style.height = window.innerHeight;
+            sectionBackgrounds[x].style.clipPath = `polygon(0 0, 100% 0, 100% 100%, 0 100%)`
         }
     }
  
   
     lastScrollPosition = scrollY;
 })
+
 
 // 'CHANGE BACKGROUNDS'
 document.addEventListener('scroll', ()=>{
@@ -106,7 +137,7 @@ document.addEventListener('scroll', ()=>{
             thisWorkHintTitle = workHint.querySelector('a').innerHTML,
             headingRect = headingOfThisWorkHint.getBoundingClientRect();
 
-        console.log('work hint heading', headingOfThisWorkHint);
+        // console.log('work hint heading', headingOfThisWorkHint);
 
         headingRect.top <= window.innerHeight * 0.6
             && setBackgroundBrightness(thisWorkHintTitle, 1);
@@ -116,10 +147,3 @@ document.addEventListener('scroll', ()=>{
     })
 })
 
-// 'BUTTON CLICKS'
-
-// => scroll to the first work hint section
-buttonScrollDown.addEventListener('click', ()=> scrollTo(0, window.innerHeight))
-
-// => scroll to the top of the document
-buttonScrollToTop.addEventListener('click', () => scrollTo(0,0))

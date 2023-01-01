@@ -3,6 +3,7 @@
 @import './mixins';
 @import './font';
 @import './general';
+@import './scroll_bar';
 
 footer{
     position: relative !important;
@@ -28,10 +29,34 @@ section{
             padding: 2rem;
             height: 100vh;
 
+            @media screen and (max-width: 1100px) {
+                flex-direction: column;
+                justify-content: space-evenly;
+                padding: 0;
+                height: 95vh;
+            }
+
+            @media screen and (max-width: 850px) {
+                flex-direction: column;
+                justify-content: space-evenly;
+                padding: 0;
+                height: auto;
+                margin-top: 3rem;
+            }
+
             & h2{
                 font-size: 320%;
                 text-align: center;
                 flex-grow: 1;
+
+                @media screen and (max-width: 1100px) {
+                    font-size: 280%;
+                    flex-grow: 0;
+                }
+
+                @media screen and (max-width: 430px) {
+                    font-size: 230%;
+                }
             }
 
             & img{
@@ -39,6 +64,14 @@ section{
                 order: -1;
                 border-radius: 63% 37% 80% 20% / 32% 57% 43% 68% ;
                 animation: moving-border 4s infinite alternate ease-in-out;
+
+                @media screen and (max-width: 850px) {
+                    width: 80%;
+                }
+
+                @media screen and (max-width: 430px) {
+                    width: 90%;
+                }
             }
         }
 
@@ -56,6 +89,19 @@ section{
             // border: 2px solid rgba(255, 255, 255, .1);
             margin: 0.1rem;
             padding: 3rem;
+
+            @media screen and (max-width: 1100px) {
+                padding: 2rem;
+                font-size: 110%;
+            }
+
+            @media screen and (max-width: 850px) {
+                padding: 1rem;
+            }
+
+            @media screen and (max-width: 430px) {
+                font-size: 100%;
+            }
         }
 
         & p::first-letter{
