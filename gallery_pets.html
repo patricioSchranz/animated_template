@@ -1,0 +1,175 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pixabay Fernandez</title>
+    <meta name="description" content="A website template for photographers">
+
+    <!-- FONT AWESOME CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="styles/gallery.css">
+</head>
+<body>
+
+    <!-- WHOLE PAGE CONTAINER -->
+    <div class="gallery_big-container">
+
+<!-- HEADER -->
+        <header class="general_header">
+
+            <!-- SOCIAL MEDIA LINKS -->
+            <div class="general_header_social-media">
+                <a href="#" rel="external noopener noreferrer">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+
+                <a href="#" rel="external noopener noreferrer">
+                    <i class="fa-brands fa-facebook"></i>
+                </a>
+            </div>
+
+            <!-- MAIN HEADING / HOME LINK -->
+            <h1 class="general_header_heading">
+                PIXABAY Fernandez
+            </h1>
+
+            <!-- HAMBURGER -->
+            <div class="general_header_hamburger-wrapper">
+                <button class="general_header_hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+            
+            <!-- NAVIGATION -->
+            <nav class="general_header_nav" aria-label="primary navigation">
+                <h2 class="hidden">Navigation</h2>
+
+                <div class="general_header_nav_img"></div>
+
+                <ul class="general_header_nav_list">
+                    <li>
+                        <a href="./about-me.html">About Me</a>
+                    </li>
+                    <li>
+                        Portfolio
+                        <ul>
+                            <li>
+                                <a href="./gallery_wildlife.html">Wildlife</a>
+                            </li>
+                            <li>
+                                <a href="./gallery_nature.html">Nature</a>
+                            </li>
+                            <li>
+                                <a href="./gallery_pets.html">Pets</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="./credits.html">Credits</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+<!-- Gallery -->
+        <section class="gallery_gallery">
+            <header class="gallery_gallery_header">
+                <img src="./pics/huskyherz_dalmatian.jpg" alt="Afrikanischer Löwe">
+                <h2>Pets</h2>
+            </header>
+
+            <!-- Thumbnails -->
+            <div class="gallery_gallery_image-container">
+                <img src="./pics/12019_sunset.jpg" alt="Sonnenuntergang">
+                <img src="./pics/Budhadityam2321_dragonfly.jpg" alt="Libelle">
+                <img src="./pics/Chraecker_owl.jpg" alt="Eule">
+                <img src="./pics/huskyherz_dalmatian.jpg" alt="Dalmatiner">
+                <img src="./pics/IanZA _african-lion.jpg" alt="Löwe">
+                <img src="./pics/IanZA_leopard.jpg" alt="Leopard">
+                <img src="./pics/Josch13_bird-of-paradise-flower.jpg" alt="Paradies Blume">
+                <img src="./pics/Mhy_flower.jpg" alt="Blüte">
+                <img src="./pics/moshehar_nature.jpg" alt="Sukkulente">
+                <img src="./pics/Mylene2401_leaf.jpg" alt="Blatt">
+                <img src="./pics/Mylene2401_petal.jpg" alt="Blütenblatt">
+                <img src="./pics/PublicDomainPictures _background.jpg" alt="Kiwi">
+                <img src="./pics/Radfotosonn _daylily.jpg" alt="Lilie">
+                <img src="./pics/RandyRMM_animal.jpg" alt="Hund">
+                <img src="./pics/Skitterphoto_man.jpg" alt="Fotograf">
+                <img src="./pics/Waratharn_fern.jpg" alt="Farn">
+            </div>
+
+            <!-- Modal Box with bigger images-->
+            <div class="gallery_gallery_modal">
+
+                <div class="gallery_gallery_modal_options-container">
+                    <!-- Close Button-->
+                    <button class="close">
+                        <i class="fa-sharp fa-solid fa-xmark"></i>
+                    </button>
+        
+                    <!-- Previous Button -->
+                    <button class="previous">
+                    <i class="fa-solid fa-chevron-left"></i>
+                    </button>
+        
+                    <!-- Next Button -->
+                    <button class="next">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </button>
+        
+                    <!-- Full Screen Button -->
+                    <button class="view">
+                        <i class="fa-solid fa-maximize"></i>
+                    </button>
+                </div>
+
+                <!-- Big Image-->
+                <img src="./pics/PublicDomainPictures _background.jpg">
+               
+            </div>
+        </section>
+
+        
+<!-- FOOTER -->
+        <footer class="general_footer">
+            <h2>PIXABAY <span>Fernandez</span></h2>
+
+            <!-- PORTFOLIO NAVIGATION -->
+            <nav class="general_footer_gallery-navigation" aria-label="portfolio navigation">
+                <h3 class="hidden">Portfolio Navigation</h3>
+                <ul>
+                    <li>
+                        <a href="./gallery_wildlife.html">Wildlife</a>
+                    </li>
+                    <li>
+                        <a href="./gallery_nature.html">Nature</a>
+                    </li>
+                    <li>
+                        <a href="./gallery_pets.html">Pets</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <button class="general_footer_arrow-up">
+                <p>&#8593;</p>
+            </button>
+        </footer>
+
+        <div class="general_loader">
+            <img src="./pics/loader.svg" alt="loader">
+        </div>
+
+    </div> <!-- END / WHOLE PAGE CONTAINER--> 
+
+    <script src="./src/js/dom_elements.js"></script>
+    <script src="./src/js/hamburger.js"></script>
+    <script src="./src/js/jump_home.js"></script>
+    <script src="./src/js/global-buttons.js"></script>
+    <script src="./src/js/gallery.js"></script>
+    <script src="./src/js/loader.js"></script>
+</body>
+</html>

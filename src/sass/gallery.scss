@@ -1,0 +1,260 @@
+@import './core';
+@import './variables';
+@import './mixins';
+@import './font';
+@import './general';
+@import './scroll_bar';
+
+footer{
+    position: relative !important;
+}
+
+body{
+    padding-bottom: 0 !important;
+}
+
+section{
+    height: auto !important;
+}
+
+
+.gallery{
+    // &_big-container{
+    //     width: 100vw;
+    //     min-height: 100vh;
+    // }
+
+    &_gallery{
+        @include flex-variable(column, nowrap, flex-start, center, center);
+        position: relative;
+        // z-index: 200;
+
+        &_header{
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            // border: 10px solid $color_on-primary-1-light;
+            margin-bottom: 5rem;
+
+            @media screen and (max-width: 850px) {
+                margin-bottom: 0;
+            }
+
+            // &::after{
+            //     content: '';
+            //     position: absolute;
+            //     bottom: -1rem;
+            //     left: -1rem;
+            //     width: 110%;
+            //     height: 2rem;
+            //     background-color: $color_primary;
+            //     box-shadow: 
+            //         1px 3px 6px rgba($color: #fff, $alpha: 0.01),
+            //         1px 3px 6px rgba($color: #fff, $alpha: 0.1) inset;
+            // }
+    
+           & img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.2);
+           }
+    
+           & h2{
+            position: absolute;
+            bottom: 5rem;
+            right: 5rem;
+            font-size: 320%;
+            text-shadow: 0 0 10px $color_on-primary-2-variant;
+            // animation: glowing-text 1s infinite alternate ease-in-out;
+
+            @media screen and (max-width: 650px) {
+                top: 1rem;
+                right: 0;
+                margin: 0.5rem 0;
+                width: 100%;
+                text-align: center;
+            }
+
+            @media screen and (max-width: 500px) {
+                font-size: 300%;
+            }
+
+            @media screen and (max-width: 430px) {
+                font-size: 260%;
+            }
+
+           }
+        }
+
+        &_image-container{
+            @include flex-variable(row, wrap, space-evenly, center, center);
+            gap: 2rem;
+            padding: 2rem;
+
+            @media screen and (max-width: 650px) {
+                padding: 1rem;
+                padding-bottom: 3rem;
+            }
+
+            & img{
+                width: 25rem;
+                height: 15rem;
+                object-fit: cover;
+                cursor: pointer;
+
+                @media screen and (max-width: 1330px) {
+                    width: 20rem;
+                    height: 12rem;
+                }
+
+                @media screen and (max-width: 1100px) {
+                    width: 15rem;
+                    height: 10rem;
+                }
+
+                @media screen and (max-width: 850px) {
+                    flex-grow: 1;
+                }
+
+                @media screen and (max-width: 650px) {
+                    flex-grow: 0;
+                    width: 95%;
+                    height: 15rem;
+                }
+
+                @media screen and (max-width: 500px) {
+                    width: 98%;
+                    height: 12rem;
+                }
+                
+            }
+
+            // & img:nth-of-type(even){
+            //     flex-grow: 1;
+            // }
+        }
+    
+        &_modal{
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            // bottom: 0;
+            // right: 0;
+            // border: 2px solid #fff;
+            background-color: $color_primary;
+            @include flex-row-center();
+            display: none;
+
+            &_options-container{
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 3.5rem;
+                // border-bottom: 1px solid #fff;
+                @include flex-variable(row, nowrap, space-between, center, center);
+                padding: 1 2rem;
+                box-shadow: 1px 3px 6px rgba($color: #fff, $alpha: 0.2);
+                background-color: $color_primary;
+
+                // &:hover{
+                //     box-shadow: 1px 1px 6px $color_on-primary-2;
+                // }
+            }
+
+            & button{
+                color: #fff;
+                font-size: 250%;
+                // position: absolute;
+                transition: all .3s;
+                // border: 2px solid #fff;
+
+                @media screen and (max-width: 550px) {
+                    font-size: 200%;
+                }
+
+                &:hover{
+                    color: $color_on-primary-2;
+                }
+
+                &:disabled{
+                    cursor:none;
+                    opacity: 0.4;
+                }
+            }
+
+            & button.close{
+                // top: 1rem;
+                // right: 2rem;
+                order: 4;
+            }
+
+            & button.previous{
+                // top: calc(50vh);
+                // left: 1rem;
+                order: 2;
+            }
+
+            & button.next{
+                // top: calc(50vh);
+                // right: 1rem;
+                order: 3;
+            }
+
+            & button.view{
+               top: 1rem;
+               left: 2rem;
+                font-size: 200%;
+                // width: 5rem;
+                // height: 3rem;
+                // background-color: $color_primary;
+                @include flex-row-center();
+                order: 1;
+                // border: 1px solid $color_on-primary-1-light;
+                // box-shadow: 1px -3px 6px rgba($color: #fff, $alpha: 0.1);
+
+                // &:hover{
+                //     box-shadow: 1px -1px 6px $color_on-primary-2;
+                // }
+            }
+
+            & img{
+                margin-top: 5rem;
+                width: 70%;
+                height: 70%;
+                object-fit: contain;
+                // border: 1px solid #fff;
+                // filter: drop-shadow(0px 0px 20px rgba(255,255,255,0.2))
+
+                @media screen and (max-width: 1330px) {
+                    width: 85%;
+                    height: 85%;
+                    margin-top: 3rem;
+                }
+            }
+
+            & img.full{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+
+}
+
+.hide-scrollbar{
+    &::-webkit-scrollbar{
+        display: none;
+    }
+    
+}
+
+@keyframes glowing-text {
+    to{
+        text-shadow: 0 0 40px $color_on-primary-2-variant;
+    }
+}

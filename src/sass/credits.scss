@@ -1,0 +1,123 @@
+@import './core';
+@import './variables';
+@import './mixins';
+@import './font';
+@import './general';
+@import './scroll_bar';
+
+footer{
+    position: relative !important;
+    margin-top: 5rem;
+}
+
+body{
+    padding-bottom: 0 !important;
+}
+
+section{
+    height: auto !important;
+}
+
+
+.credits{
+
+    &_content{
+        @include flex-variable(column, nowrap, flex-start, center, center);
+
+        &_header{
+            width: 100%;
+            height: 95vh;
+            @include flex-variable(row, nowrap, space-between, center, center);
+
+            & h2{
+                font-size: 320%;
+                text-align: center;
+                flex-grow: 1;
+                animation: shake 1s infinite alternate;
+
+                &::first-letter{
+                    font-size: 350%;
+                }
+
+                @media screen and (max-width: 1100px) {
+                    font-size: 280%;
+                    flex-grow: 0;
+                }
+
+                @media screen and (max-width: 430px) {
+                    font-size: 230%;
+                }
+            }
+        }
+
+        &_credit-section{
+            width: 100%;
+            flex-direction: inherit;
+            margin-bottom: 8rem;
+            
+            & h3{
+                width: 100%;
+                text-align: center;
+                font-size: 250%;
+                text-shadow: 0 0 10px $color_on-primary-2-variant;
+            }
+
+            & a{
+                position: relative;
+                font-size: 110%;
+
+                &:before{
+                    content: '';
+                    width: 100%;
+                    height: 1rem;
+                    border-bottom: 1px solid $color_on-primary-1;
+                    position: absolute;
+                    bottom: -.5rem;
+                }
+
+                & span{
+                    font-size: 120%;
+                    display: block;
+                    text-align: center;
+                    margin-bottom: .5rem;
+                }
+            }
+        }
+    }
+}
+
+@keyframes shake {
+    0% {
+      transform: translate(1px, -2px) rotate(-1deg);
+    }
+    10% {
+      transform: translate(-1px, 2px) rotate(-1deg);
+    }
+    20% {
+      transform: translate(1px, 2px) rotate(0deg);
+    }
+    30% {
+      transform: translate(3px, 2px) rotate(0deg);
+    }
+    40% {
+      transform: translate(1px, -1px) rotate(1deg);
+    }
+    50% {
+      transform: translate(-1px, -2px) rotate(-1deg);
+    }
+    60% {
+      transform: translate(-3px, 1px) rotate(0deg);
+    }
+    70% {
+      transform: translate(3px, 1px) rotate(-1deg);
+    }
+    80% {
+      transform: translate(-1px, -1px) rotate(1deg);
+    }
+    90% {
+      transform: translate(-3px, 0px) rotate(1deg);
+    }
+    100% {
+      transform: translate(1px, 1px) rotate(0deg);
+    }
+  }

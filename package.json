@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "built:home": "sass ./src/sass/home.scss ./styles/home.css --style=compressed --watch",
-    "built:about-me": "sass ./src/sass/about-me.scss ./styles/about-me.css --style=compressed --watch"
+    "built:about-me": "sass ./src/sass/about-me.scss ./styles/about-me.css --style=compressed --watch",
+    "built:gallery": "sass ./src/sass/gallery.scss ./styles/gallery.css --style=compressed --watch",
+    "built:credits": "sass ./src/sass/credits.scss ./styles/credits.css --style=compressed --watch"
   },
   "author": "",
   "license": "ISC"
