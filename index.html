@@ -10,6 +10,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <link rel="stylesheet" href="styles/home.css">
+    
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
+    <script src="./src/js/aos.js" defer></script>
 </head>
 <body>
 
@@ -79,13 +83,14 @@
         <section class="home_landing-section">
 
             <!-- SECTION HEADING -->
-            <h2 class="home_landing-section_h2">
+            <h2 class="home_landing-section_h2" data-aos="fade-right">
                 PIXABAY Fernandez 
                 <span>Photography</span>
             </h2>
 
             <!-- PORTFOLIO NAVIGATION -->
-            <nav class="home_landing-section_gallery-navigation" aria-label="portfolio navigation">
+            <nav class="home_landing-section_gallery-navigation" aria-label="portfolio navigation"
+            data-aos="fade-left" data-aos-delay="500">
                 <h3>Portfolio <span class="hidden">Navigation</span></h3>
                 <ul>
                     <li>
@@ -111,7 +116,7 @@
 
 <!-- WORK HINT SECTION - WILDLIFE -->
         <section class="home_work-hint">
-            <h2>
+            <h2 data-aos="zoom-in" data-aos-duration="2500">
                 <a href="./gallery_wildlife.html">Wildlife</a>
             </h2>
         </section>
@@ -121,7 +126,7 @@
 
 <!-- WORK HINT SECTION - NATURE -->
         <section class="home_work-hint">
-            <h2>
+            <h2 data-aos="zoom-in" data-aos-duration="2500">
                 <a href="./gallery_nature.html">Nature</a>
             </h2>
         </section>
@@ -130,8 +135,8 @@
         <div class="home_section-background_nature background">Pets</div>
 
 <!-- WORK HINT SECTION - PETS -->
-        <section class="home_work-hint">
-            <h2>
+        <section class="home_work-hint" data-aos-duration="2500">
+            <h2 data-aos="zoom-in" data-aos-duration="2500">
                 <a href="./gallery_pets.html">Pets</a>
             </h2>
         </section>

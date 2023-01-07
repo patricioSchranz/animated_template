@@ -10,5 +10,8 @@
     "built:credits": "sass ./src/sass/credits.scss ./styles/credits.css --style=compressed --watch"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "aos": "^2.3.4"
+  }
 }
