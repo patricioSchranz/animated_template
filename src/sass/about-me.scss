@@ -18,6 +18,11 @@ section{
 }
 
 .about-me{
+    &_big-container{
+        width: 100vw;
+        overflow:hidden;
+    }
+
     // 'CONTENT'
     &_content{
         @include flex-variable(column, nowrap, flex-start, center, center);
